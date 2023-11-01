@@ -1,0 +1,27 @@
+python qlora.py \
+    --model_name_or_path meta-llama/Llama-2-7b-hf \
+    --use_auth \
+    --output_dir ./output/llama-2-guanaco-7b \
+    --dataset alpaca \
+    --do_train True \
+    --do_eval True \
+    --do_mmlu_eval True \
+    --source_max_len 384 \
+    --target_max_len 128 \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1 \
+    --gradient_accumulation_steps 16 \
+    --logging_steps 10 \
+    --max_steps 10000 \
+    --save_strategy steps \
+    --data_seed 42 \
+    --save_steps 1000 \
+    --save_total_limit 40 \
+    --lora_r 64 \
+    --lora_alpha 16 \
+    --lora_modules all \
+    --evaluation_strategy steps \
+    --eval_dataset_size 1024 \
+    --max_eval_samples 1000 \
+    --eval_steps 1000 \
+    --optim paged_adamw_32bit \
