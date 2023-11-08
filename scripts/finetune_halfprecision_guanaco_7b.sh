@@ -1,7 +1,7 @@
 python qlora.py \
-    --model_name_or_path meta-llama/Llama-2-7b-hf \
+    --model_name_or_path huggyllama/llama-7b \
     --use_auth \
-    --output_dir ./output/llama-2-guanaco-7b \
+    --output_dir ./output/llama-7b \
     --dataset alpaca \
     --do_train True \
     --do_eval True \
