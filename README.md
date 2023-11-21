@@ -36,6 +36,11 @@ You can access [the model response Colab here](https://colab.research.google.com
 To load models in 4bits with transformers and bitsandbytes, you have to install accelerate and transformers from source and make sure you have the latest version of the bitsandbytes library. After installing PyTorch (follow instructions [here](https://pytorch.org/get-started/locally/)), you can achieve the above with the following command:
 ```bash
 pip install -U -r requirements.txt
+cd ..
+git clone https://github.com/TimDettmers/bitsandbytes.git 
+cd bitsandbytes 
+CUDA_VERSION=118 make cuda11x_nomatmul 
+python setup.py install 
 ```
 
 ## Getting Started
